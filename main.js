@@ -1,1 +1,2 @@
-Udemi hi
+const numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", "0");
+
