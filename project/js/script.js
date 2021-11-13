@@ -24,6 +24,20 @@ const movieDB = {
     ]
 };
 
-const adv = document.querySelector('.promo__adv');
+const adv = document.querySelectorAll('.promo__adv img'),
+      poster = document.querySelector('.promo__bg'),
+      promoGenre = poster.querySelector('.promo__genre'),
+      promoBg = document.querySelector('.promo__bg'),
+      films = document.querySelectorAll('.promo__interactive-item');
 
-adv.remove();
+promoBg.style.background = 'url("../project/img/bg.jpg") center center/cover no-repeat';
+promoGenre.textContent = 'Драма';
+movieDB.movies.sort();
+
+films.forEach((item, i) => {
+  item.innerHTML = `${i+1} ` + movieDB.movies[i];
+});
+
+adv.forEach(item => {
+    item.remove();
+});
